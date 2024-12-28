@@ -1,0 +1,21 @@
+/* bugSolution.css */
+
+.container {
+  width: calc(100vw - 20px); /* Consistent spacing */
+  padding: calc(10% + 10px); /* Correct unit combination */
+  /* Nested calc() handled properly */
+  height: calc(calc(50vh - 20px) + 20px);
+}
+
+/* Fallback for older browsers with limited calc() support */
+.container {
+  width: 90%;
+  padding: 10px;
+  height: 50%;
+}
+
+@supports (not (calc(100% - 10px))) {
+    .container {
+        width: auto; /* Fallback for very old browsers without calc() support */
+    }
+}
